@@ -1,3 +1,6 @@
+body{
+  background: black;
+}
 .to-do-list{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
@@ -5,6 +8,7 @@
 }
 h1{
   font-size: 4rem;
+  color: white;
 }
 button{
   font-size: 1.6rem;
@@ -50,7 +54,7 @@ li{
   font-size: 2rem;
   font-weight: bold;
   padding: 15px;
-  background-color: rgb(219, 205, 233);
+  background-color: white;
   margin-bottom: 10px;
   border: 3px solid black;
   border-radius: 15px;
