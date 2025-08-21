@@ -1,8 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect} from "react"
 function ToDoList(){
 
-  const [tasks, setTasks] = useState([]);
+  // check if something stored in localStorage
+  const [tasks, setTasks] = useState(() => {
+    //load page
+    const saved = localStorage.getItem("tasks");
+    //if something exists, we parse it back to array and use that as a starting rate, if not just start with []
+    return saved ? JSON.parse(saved) : [];
+  });
+
+
   const [newTask, setNewTask] = useState("");
+//save page
+  useEffect(() =>{
+    localStorage.setItem("tasks",JSON.stringify(tasks));//convert array/object -> string
+  },[tasks]);
 
   function handleInputChange(event){
     setNewTask(event.target.value);
